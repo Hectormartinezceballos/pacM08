@@ -59,7 +59,7 @@ public class BBDDuser extends SQLiteOpenHelper {
 
 //        Usuario u = new Usuario (nombre, apellido, email, usuario, contrasena);
         ContentValues valoresUsuario=new ContentValues();
-        valoresUsuario.put("id", 0);
+//        valoresUsuario.put("id", 0);
         valoresUsuario.put("nombre",nombre);
         valoresUsuario.put("apellido",apellido);
         valoresUsuario.put("email",email);
@@ -82,23 +82,19 @@ public class BBDDuser extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList llenar_datosUsuario(String usuario){
-        ArrayList<String> lista=new ArrayList<>();
+    public Cursor llenar_datosUsuario(String usuario){
+
         SQLiteDatabase database=this.getReadableDatabase();
         String consulta="select * from usuarios where usuario='" + usuario+"'";
+
         Cursor registro = database.rawQuery(consulta,null);
 
-        lista.add(registro.getString(1));
-        lista.add(registro.getString(2));
-        lista.add(registro.getString(3));
-        lista.add(registro.getString(4));
-        lista.add(registro.getString(5));
-            return lista;
+        return registro;
     }
 
     public String obtenerUsuario (String usuario){
         SQLiteDatabase database=this.getReadableDatabase();
-        String query = "select apellido from usuarios where usuarios.usuario='"+ usuario+"'";
+        String query = "select * from usuarios where usuario='" + usuario+"'";
         Cursor registro = database.rawQuery(query,null);
         String apellido = registro.getString(1);
         return apellido;
