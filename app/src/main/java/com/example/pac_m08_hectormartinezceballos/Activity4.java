@@ -20,6 +20,8 @@ public class Activity4 extends AppCompatActivity {
     ArrayAdapter adaptador;
     String usuarioRecibido;
 
+    BBDDuser db = new BBDDuser(this,"usuarios",null,1);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +48,12 @@ public class Activity4 extends AppCompatActivity {
             }
         });
 
-        Boolean bundle=getIntent().getExtras();
+        Bundle bundle=getIntent().getExtras();
         usuarioRecibido=bundle.getString("usuario");
-        tvNombre.setText(usuarioRecibido);
+        String apellido = db.obtenerUsuario(usuarioRecibido);
+
+        tvUsuario.setText(usuarioRecibido);
+        tvApellido.setText(apellido);
 
 //        BBDDuser bbdDuser=new BBDDuser(this,"usuarios",null,1);
 //        arraylistaDatos=bbdDuser.llenar_datosUsuario(usuarioRecibido);

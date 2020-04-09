@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BBDDuser extends SQLiteOpenHelper {
+
     public BBDDuser(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -77,8 +78,6 @@ public class BBDDuser extends SQLiteOpenHelper {
                 ("usuarios",new String[]{"id","nombre","apellido","email","usuario","contrasena"},"usuario like '"+usuario+"'"
                 + "and contrasena like '"+contrasena+"'",null,null,null,null);
 
-
-
         return cursor;
 
     }
@@ -95,10 +94,29 @@ public class BBDDuser extends SQLiteOpenHelper {
         lista.add(registro.getString(4));
         lista.add(registro.getString(5));
             return lista;
-
-
-
-        }
-
-
     }
+
+    public String obtenerUsuario (String usuario){
+        SQLiteDatabase database=this.getReadableDatabase();
+        String query = "select apellido from usuarios where usuarios.usuario='"+ usuario+"'";
+        Cursor registro = database.rawQuery(query,null);
+        String apellido = registro.getString(1);
+        return apellido;
+
+//        Usuario user = new Usuario("select * from usuarios where usuarios.nombre='" + nombre+"'";
+
+//        public ArrayList llenar_datosUsuario(String usuario){
+//            ArrayList<String> lista=new ArrayList<>();
+//            SQLiteDatabase database=this.getReadableDatabase();
+//            String consulta="select * from usuarios where usuario='" + usuario+"'";
+//            Cursor registro = database.rawQuery(consulta,null);
+//
+//            lista.add(registro.getString(1));
+//            lista.add(registro.getString(2));
+//            lista.add(registro.getString(3));
+//            lista.add(registro.getString(4));
+//            lista.add(registro.getString(5));
+//            return lista;
+//        }
+    }
+}
