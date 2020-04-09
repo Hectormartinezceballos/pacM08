@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">APLICACIÓN PAC M08</string>
+    <string name="begin_session_button">Pantalla Inicio de sesion</string>
+    <string name="Register_button">¿No tienes una cuenta? ¡Registrate!</string>
+    <string name="Welcome_text">¡Bienvenido!</string>
+
+    <string name="activity2_Name_text"> Nombre</string>
+    <string name="activity2_Surname_text">Apellido</string>
+    <string name="activity2_user_text">Nombre de usuario </string>
+    <string name="activity2_password_text">Contraseña </string>
+    <string name="activity2_email_text">Correo electronico</string>
+    <string name="activity2_register_button">Aceptar y finalizar registro </string>
+    <string name="activity2_welcome_register_text">Rellene los datos de su cuenta </string>
+
+    <string name="activity3_Login_text">Introduzca usuario</string>
+    <string name="activity3_Password_text">Introduzca contraseña</string>
+    <string name="activity3_loginButton">Iniciar Sesión</string>
+
+    <string name="activity4_Play_button">Reproducir Musica</string>
+    <string name="activity4_Stop_button">Parar Reproduccion</string>
+    <string name="activity4_DatosUsuariotext">Introduzca su contraseña</string>
+</resources>
