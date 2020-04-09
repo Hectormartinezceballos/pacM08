@@ -46,7 +46,7 @@ public class Activity4 extends AppCompatActivity {
             }
         });
 
-        Bundle bundle=getIntent().getExtras();
+        Boolean bundle=getIntent().getExtras();
         usuarioRecibido=bundle.getString("usuario");
         tvNombre.setText(usuarioRecibido);
 
