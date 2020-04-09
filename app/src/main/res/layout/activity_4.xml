@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Apellidos"
-        android:textSize="24"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/tvNombre"
         app:layout_constraintStart_toStartOf="@+id/tvNombre"
         app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Correo"
-        android:textSize="24"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvApellido" />
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Usuario"
-        android:textSize="24"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCorreo" />
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Contraseña"
-        android:textSize="24"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsuario" />
