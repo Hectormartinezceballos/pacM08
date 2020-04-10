@@ -31,7 +31,7 @@ public class BBDDuser extends SQLiteOpenHelper {
                 "contrasena TEXT NOT NULL);";
         db.execSQL(crerTablA);
 
-        /*************************************************************impresion de control por pantalla*********************************************/
+        /*************************************************************impresion de control por consola*********************************************/
         System.out.println("base de datos creada correctamente");
 
 
@@ -57,9 +57,9 @@ public class BBDDuser extends SQLiteOpenHelper {
 
     public void insertarDatos(String nombre, String apellido, String email, String usuario, String contrasena){
 
-//        Usuario u = new Usuario (nombre, apellido, email, usuario, contrasena);
+
         ContentValues valoresUsuario=new ContentValues();
-//        valoresUsuario.put("id", 0);
+
         valoresUsuario.put("nombre",nombre);
         valoresUsuario.put("apellido",apellido);
         valoresUsuario.put("email",email);
@@ -81,6 +81,7 @@ public class BBDDuser extends SQLiteOpenHelper {
         return cursor;
 
     }
+    //Metodo que permite mostrar los datos del usuario en el activity 4 devolviendo un cursor.
 
     public Cursor llenar_datosUsuario(String usuario){
 
@@ -92,27 +93,5 @@ public class BBDDuser extends SQLiteOpenHelper {
         return registro;
     }
 
-    public String obtenerUsuario (String usuario){
-        SQLiteDatabase database=this.getReadableDatabase();
-        String query = "select * from usuarios where usuario='" + usuario+"'";
-        Cursor registro = database.rawQuery(query,null);
-        String apellido = registro.getString(1);
-        return apellido;
 
-//        Usuario user = new Usuario("select * from usuarios where usuarios.nombre='" + nombre+"'";
-
-//        public ArrayList llenar_datosUsuario(String usuario){
-//            ArrayList<String> lista=new ArrayList<>();
-//            SQLiteDatabase database=this.getReadableDatabase();
-//            String consulta="select * from usuarios where usuario='" + usuario+"'";
-//            Cursor registro = database.rawQuery(consulta,null);
-//
-//            lista.add(registro.getString(1));
-//            lista.add(registro.getString(2));
-//            lista.add(registro.getString(3));
-//            lista.add(registro.getString(4));
-//            lista.add(registro.getString(5));
-//            return lista;
-//        }
-    }
 }

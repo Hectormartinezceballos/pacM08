@@ -39,11 +39,16 @@ public class Activity3 extends AppCompatActivity {
                 String contr_activity3=contraseña_activity3.getText().toString();
                 try {
                     Cursor cursorValidacion = bbdDuser.ConsultaUsuarioContraseña(us_activity3, contr_activity3);
-                    if (cursorValidacion.getCount()>0){
+
+                    if (cursorValidacion.getCount()!=0){//si hay coincidencia permite pasar al activity 4
                         Intent intent = new Intent(Activity3.this, Activity4.class);
-                        intent.putExtra("usuario",us_activity3);
+                        intent.putExtra("usuario",us_activity3);//pasamos este parametro al activity 4 para poder sacar los datos de la BBDD
                         startActivity(intent);
-                    } else Toast.makeText(getApplicationContext(),"Usuario o Contraseña Incorrecto",Toast.LENGTH_LONG).show();
+                        usuario_activity3.setText("");
+                        contraseña_activity3.setText("");
+                    } else Toast.makeText(getApplicationContext(),R.string.activity3_toastError,Toast.LENGTH_LONG).show();
+
+
 
                 }catch (SQLException e){
                     e.printStackTrace();

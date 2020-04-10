@@ -3,24 +3,24 @@ package com.example.pac_m08_hectormartinezceballos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Activity4 extends AppCompatActivity {
 
-    Button play, stop;
-    TextView tvNombre, tvApellido, tvCorreo, tvUsuario, tvContrasena,tvid;
-
-    ArrayList<String> arraylistaDatos;
-    ArrayAdapter adaptador;
+   private Button play, stop;
+    TextView tvNombre, tvApellido, tvCorreo, tvUsuario, tvContrasena, tvid;
     String usuarioRecibido;
-
-    BBDDuser db = new BBDDuser(this,"usuarios",null,1);
+    MediaPlayer mediaPlayer;
+    BBDDuser db = new BBDDuser(this, "usuarios", null, 1);
 
 
     @Override
@@ -28,34 +28,43 @@ public class Activity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
 
-        play=findViewById(R.id.activity4_play);
-        stop=findViewById(R.id.activity4_stop);
+        play = findViewById(R.id.activity4_play);
+        stop = findViewById(R.id.activity4_stop);
         tvNombre = findViewById(R.id.tvNombre);
         tvApellido = findViewById(R.id.tvApellido);
         tvCorreo = findViewById(R.id.tvCorreo);
         tvUsuario = findViewById(R.id.tvUsuario);
         tvContrasena = findViewById(R.id.tvContrasena);
-        tvid=findViewById(R.id.tvid);
+        tvid = findViewById(R.id.tvid);
+        mediaPlayer = MediaPlayer.create(this, R.raw.resistire);
 
 
         play.setOnClickListener(new View.OnClickListener() {
+
             @Override
+
             public void onClick(View v) {
+
+                Activity4.this.onClick(v);
+
             }
+
         });
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Activity4.this.onClick(v);
             }
         });
 
 
+        Bundle bundle = getIntent().getExtras();//Recuperamos el nombre de usuario para buscar en la BBDD
+        usuarioRecibido = bundle.getString("usuario");
 
-        Bundle bundle=getIntent().getExtras();
-        usuarioRecibido=bundle.getString("usuario");
-        Cursor cursor = db.llenar_datosUsuario(usuarioRecibido);
-        if(cursor.moveToFirst()){
-            do{
+        Cursor cursor = db.llenar_datosUsuario(usuarioRecibido);//Con este metodo sacamos los datos del usuario del activity 3.
+        if (cursor.moveToFirst()) {
+            do {
                 tvNombre.setText(cursor.getString(1));
                 tvApellido.setText(cursor.getString(2));
                 tvCorreo.setText(cursor.getString(3));
@@ -64,21 +73,42 @@ public class Activity4 extends AppCompatActivity {
                 tvid.setText(cursor.getString(0));
 
 
+            } while (cursor.moveToNext());
 
-
-            }while( cursor.moveToNext());
         }
 
-        //tvNombre.setText(arraylistaDatos.get(1));
-//
-//        tvUsuario.setText(usuarioRecibido);
-//        tvApellido.setText(apellido);
+        db.cerrarBD();
 
-//        BBDDuser bbdDuser=new BBDDuser(this,"usuarios",null,1);
-//        arraylistaDatos=bbdDuser.llenar_datosUsuario(usuarioRecibido);
-//        adaptador=new ArrayAdapter(this,android.R.layout.simple_list_item_1,arraylistaDatos);
-//        Datos_usuario.setAdapter(adaptador);
-//        bbdDuser.cerrarBD();
+
 
     }
+    public void onClick (View v){
+        //Comprobamos el identificador del boton que ha llamado al evento para ver
+        //cual de los botones es y ejecutar la acción correspondiente
+        switch (v.getId()) {
+            case R.id.activity4_play:
+                //Iniciamos el audio
+
+                mediaPlayer.start();
+
+                break;
+
+            case R.id.activity4_stop:
+                //Paramos el audio y volvemos a inicializar
+                try {
+
+                    mediaPlayer.stop();
+                    mediaPlayer.prepare();
+                    mediaPlayer.seekTo(0);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+//                break;
+
+        }
+    }
+
 }

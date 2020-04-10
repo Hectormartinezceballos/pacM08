@@ -12,15 +12,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int numberCode=0;
 
-    Button botonRegistro;
-    Button botonLogin;
+    Button botonRegistro,botonLogin;//Creamos las variables donde almacenar las vistas
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         botonLogin=findViewById(R.id.begin_session_button);
-        botonLogin.setOnClickListener(new View.OnClickListener() {
+        botonLogin.setOnClickListener(new View.OnClickListener() {//aplicamos un listener a los botones
             @Override
             public void onClick(View v) {
                 funcionLogin(v);
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void funcionLogin(View view){
+    public void funcionLogin(View view){//añadimos funciones a los botones login y registro.
 
         Intent intent =new Intent(this,Activity3.class);
         startActivity(intent);
