@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">APLICACIÓN PAC M08</string>
+    <string name="app_name"> PAC-M08</string>
     <string name="begin_session_button">Pantalla Inicio de sesion</string>
     <string name="Register_button">¿No tienes una cuenta? ¡Registrate!</string>
     <string name="Welcome_text">¡Bienvenido!</string>

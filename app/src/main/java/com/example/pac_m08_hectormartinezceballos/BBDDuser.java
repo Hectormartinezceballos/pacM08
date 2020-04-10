@@ -9,9 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+
 
 public class BBDDuser extends SQLiteOpenHelper {
 
@@ -31,7 +29,7 @@ public class BBDDuser extends SQLiteOpenHelper {
                 "contrasena TEXT NOT NULL);";
         db.execSQL(crerTablA);
 
-        /*************************************************************impresion de control por consola*********************************************/
+        //************************************************************impresion de control por consola*********************************************
         System.out.println("base de datos creada correctamente");
 
 
@@ -72,9 +70,8 @@ public class BBDDuser extends SQLiteOpenHelper {
 
     //Metodo que me permite consultar si son correctos el usuario y la contraseña
 
-    public Cursor ConsultaUsuarioContraseña(String usuario, String contrasena)throws SQLException {
-        Cursor cursor = null;
-        cursor=this.getReadableDatabase().query
+    public Cursor ConsultaUsuarioContrasena(String usuario, String contrasena)throws SQLException {
+        Cursor cursor=this.getReadableDatabase().query
                 ("usuarios",new String[]{"id","nombre","apellido","email","usuario","contrasena"},"usuario like '"+usuario+"'"
                 + "and contrasena like '"+contrasena+"'",null,null,null,null);
 
@@ -84,6 +81,7 @@ public class BBDDuser extends SQLiteOpenHelper {
     //Metodo que permite mostrar los datos del usuario en el activity 4 devolviendo un cursor.
 
     public Cursor llenar_datosUsuario(String usuario){
+
 
         SQLiteDatabase database=this.getReadableDatabase();
         String consulta="select * from usuarios where usuario='" + usuario+"'";

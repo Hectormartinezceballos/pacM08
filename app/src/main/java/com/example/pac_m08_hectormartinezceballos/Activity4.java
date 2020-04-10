@@ -1,22 +1,18 @@
 package com.example.pac_m08_hectormartinezceballos;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 public class Activity4 extends AppCompatActivity {
 
-   private Button play, stop;
+   Button play, stop;
     TextView tvNombre, tvApellido, tvCorreo, tvUsuario, tvContrasena, tvid;
     String usuarioRecibido;
     MediaPlayer mediaPlayer;

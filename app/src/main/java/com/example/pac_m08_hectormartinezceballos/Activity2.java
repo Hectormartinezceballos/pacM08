@@ -39,12 +39,14 @@ public class Activity2 extends AppCompatActivity {
         if(nombre.getText().toString().isEmpty() || apellido.getText().toString().isEmpty()|| usuario.getText().toString().isEmpty()||
                 contrasena.getText().toString().isEmpty()|| email.getText().toString().isEmpty()){
             Toast.makeText(this,R.string.activity2_toastCamposObligatorios,Toast.LENGTH_LONG).show();
+
             //si hay algun campo vacío no nos deja avanzar y lo muestra en el dispositivo, los pongo obligatorios todos.
         }
         else {
             BBDDuser bbddUser = new BBDDuser(this,"usuarios",null,1);//creamos bbdd
 
-            bbddUser.abrirBD();
+            bbddUser.abrirBD();//abrimos flujo base de datos es igual que hacer(bbdduser.getreadable)
+
             //EJECUTAMOS LA FUNCION INSERT DATA PARA RECOGER LOS DATOS INTRODUCIDOS
             bbddUser.insertarDatos(
                     nombre.getText().toString(),
@@ -52,16 +54,19 @@ public class Activity2 extends AppCompatActivity {
                     email.getText().toString(),
                     usuario.getText().toString(),
                     contrasena.getText().toString());
-            bbddUser.cerrarBD();
+
+            bbddUser.cerrarBD();//cerramos flujo de base de datos
 
             Toast.makeText(this,R.string.activity2_toastRegistroCorrecto,Toast.LENGTH_SHORT).show();
-            //muestro mensaje cuando los datos se han introducido y limpio las vistas de la aplicacion.
+
+                               //muestro mensaje cuando los datos se han introducido y limpio las vistas de la aplicacion.
+
             nombre.setText("");
             apellido.setText("");
             email.setText("");
             usuario.setText("");
             contrasena.setText("");
-            Intent registrar=new Intent(this,Activity3.class);//Cambiamos de actividad con un intent.
+            Intent registrar=new Intent(this,Activity3.class);         //Cambiamos de actividad con un intent.
             startActivity(registrar);
         }
     }

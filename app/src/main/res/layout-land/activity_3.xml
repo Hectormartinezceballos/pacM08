@@ -29,14 +29,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/begin_session_button"
+        android:textColor="@color/colorTextBlack"
         android:textSize="24sp"
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024"
-        tools:layout_editor_absoluteY="80dp" />
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <EditText
         android:id="@+id/user_activity3"
@@ -50,6 +50,8 @@
         android:gravity="center"
         android:hint="@string/activity3_Login_text"
         android:inputType="textPersonName"
+        android:textColor="@color/colorTextBlack"
+        android:textColorHint="@color/colorTextBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +70,8 @@
         android:gravity="center"
         android:hint="@string/activity3_Password_text"
         android:inputType="textPassword"
+        android:textColor="@color/colorTextBlack"
+        android:textColorHint="@color/colorTextBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/activity2_welcome_register_text"
         android:textColor="@color/colorTextBlack"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +30,7 @@
         android:gravity="center"
         android:hint="@string/activity2_Name_text"
         android:inputType="textPersonName"
+        android:textColorHint="@color/colorTextBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,11 +45,12 @@
         android:gravity="center"
         android:hint="@string/activity2_Surname_text"
         android:inputType="textPersonName"
+        android:textColorHint="@color/colorTextBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_nombre"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editText_Usuario"
@@ -58,11 +60,12 @@
         android:gravity="center"
         android:hint="@string/activity2_user_text"
         android:inputType="textPersonName"
+        android:textColorHint="@color/colorTextBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_apellido"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editText_Password"
@@ -72,11 +75,12 @@
         android:gravity="center"
         android:hint="@string/activity2_password_text"
         android:inputType="textPassword"
+        android:textColorHint="@color/colorTextBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_Usuario"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editText_email"
@@ -85,12 +89,14 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/activity2_email_text"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textEmailAddress"
+        android:textColorHint="@color/colorTextBlack"
+        android:textIsSelectable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_Password"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/activity2_boton_registro"
@@ -107,6 +113,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_email"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
