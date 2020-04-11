@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> PAC-M08</string>
+    <string name="begin_session_button">Begin session</string>
+    <string name="Register_button">Register Data</string>
+    <string name="Welcome_text">Welcome!</string>
+
+    <string name="activity2_Name_text"> Name</string>
+    <string name="activity2_Surname_text">Surname</string>
+    <string name="activity2_user_text">Username </string>
+    <string name="activity2_password_text">Password </string>
+    <string name="activity2_email_text">E-mail</string>
+    <string name="activity2_register_button">Accept and begin </string>
+    <string name="activity2_welcome_register_text">Fill in all fields </string>
+    <string name="activity2_toastRegistroCorrecto"> Correctly Registered User </string>
+    <string name="activity2_toastCamposObligatorios">All fields Required! </string>
+
+    <string name="activity3_Login_text">Enter Username </string>
+    <string name="activity3_Password_text">Enter Password </string>
+    <string name="activity3_loginButton">Begin session </string>
+    <string name="activity3_toastError">Wrong Username or Pasword</string>
+
+    <string name="activity4_Play_button">Play music </string>
+    <string name="activity4_Stop_button">Stop music </string>
+    <string name="activity4_DatosUsuariotext"> Your data </string>
+    <string name="activity4_idText"> Nº ID  </string>
+    <string name="activity4_ToastReproduccion"> Music on Play  </string>
+    <string name="activity4_ToastStop">Music stopped  </string>
+</resources>

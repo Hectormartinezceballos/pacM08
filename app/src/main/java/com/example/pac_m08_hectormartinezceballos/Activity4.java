@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.io.IOException;
 
 
@@ -40,7 +42,6 @@ public class Activity4 extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
-
                 Activity4.this.onClick(v);
 
             }
@@ -84,12 +85,14 @@ public class Activity4 extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.activity4_play:
                 //Iniciamos el audio
+                Toast.makeText(getApplicationContext(),R.string.activity4_ToastReproduccion,Toast.LENGTH_SHORT).show();
 
                 mediaPlayer.start();
 
                 break;
 
             case R.id.activity4_stop:
+                Toast.makeText(getApplicationContext(),R.string.activity4_ToastStop,Toast.LENGTH_SHORT).show();
                 //Paramos el audio y volvemos a inicializar
                 try {
 

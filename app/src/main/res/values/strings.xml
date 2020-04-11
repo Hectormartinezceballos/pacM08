@@ -23,6 +23,6 @@
     <string name="activity4_Stop_button">Parar Reproduccion </string>
     <string name="activity4_DatosUsuariotext"> Datos de tu cuenta </string>
     <string name="activity4_idText"> Nº ID  </string>
-    <string name="activity4_ToastReproduccion"> Reproduccion iniciada  </string>
-    <string name="activity4_ToastStop">Reproduccion Pausada  </string>
+    <string name="activity4_ToastReproduccion"> Musica iniciada  </string>
+    <string name="activity4_ToastStop">Musica parada </string>
 </resources>
